@@ -1,0 +1,34 @@
+Service Information
+service: emaildesuso-notes-api
+stage: prod
+region: us-east-2
+stack: emaildesuso-notes-api-prod
+resources: 43
+api keys:
+  None
+endpoints:
+  PUT - https://btcqr1rjx0.execute-api.us-east-2.amazonaws.com/prod/notes
+  GET - https://btcqr1rjx0.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+  GET - https://btcqr1rjx0.execute-api.us-east-2.amazonaws.com/prod/notes
+  PUT - https://btcqr1rjx0.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+  DELETE - https://btcqr1rjx0.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+  POST - https://btcqr1rjx0.execute-api.us-east-2.amazonaws.com/prod/billing
+functions:
+  create: emaildesuso-notes-api-prod-create
+  get: emaildesuso-notes-api-prod-get
+  list: emaildesuso-notes-api-prod-list
+  update: emaildesuso-notes-api-prod-update
+  delete: emaildesuso-notes-api-prod-delete
+  billing: emaildesuso-notes-api-prod-billing
+layers:
+  None
+
+*******************************************************************************************************************Serverless: Announcing Metrics, CI/CD, Secrets and more built into Serverless Framework. Run "serverless login" to 
+activate for free..
+*******************************************************************************************************************
+
+npx aws-api-gateway-cli-test --username="emaildesuso@example.com" --password="Passw0rd!" --user-pool-id="us-east-2_N3AckynRu" --app-client-id="1rki6ke5q6i2a0bgm7q7rcp5tb" --cognito-region="us-east-2" --identity-pool-id="us-east-2:5d903f77-6c50-4b55-b09d-0b65d2f7dcf3" --invoke-url="https://btcqr1rjx0.execute-api.us-east-2.amazonaws.com/prod" --api-gateway-region="us-east-2" --path-template="/notes" --method="POST"  --body="{\"content\":\"hello world\",\"attachment\":\"hello.jpg\"}"
+npx aws-api-gateway-cli-test --username="emaildesuso@example.com" --password="Passw0rd!" --user-pool-id="us-east-2_N3AckynRu" --app-client-id="1rki6ke5q6i2a0bgm7q7rcp5tb" --cognito-region="us-east-2" --identity-pool-id="us-east-2:5d903f77-6c50-4b55-b09d-0b65d2f7dcf3" --invoke-url="https://btcqr1rjx0.execute-api.us-east-2.amazonaws.com/prod/" --api-gateway-region="us-east-2" --path-template="notes" --method="POST"  --body="{\"content\":\"hello world\",\"attachment\":\"hello.jpg\"}"
+
+aws cognito-idp sign-up --region "us-east-2" --client-id "1rki6ke5q6i2a0bgm7q7rcp5tb" --username "emaildesuso@example.com" --password "Passw0rd!"
+aws cognito-idp admin-confirm-sign-up --region "us-east-2" --user-pool-id "us-east-2_N3AckynRu" --username "emaildesuso@example.com"
