@@ -10,18 +10,25 @@ plugins:
   - serverless-offline
   - serverless-dotenv-plugin # Load .env as environment variables
 
+custom:
+  # Our stage is based on what is passed in when running serverless
+  # commands. Or falls back to what we have set in the provider section.
+  stage: ${opt:stage, self:provider.stage}
+  # Name of the SST app that's deploying our infrastructure
+  sstApp: ${self:custom.stage}-notes-infra
+
 provider:
   name: aws
   runtime: nodejs10.x
   stage: dev
-  region: us-east-2
+  region: us-east-1
   # To load environment variables externally
   # rename env.example to .env and uncomment
   # the following line. Also, make sure to not
   # commit your .env.
   #
   environment:
-    tableName: ${env:tableName}
+    tableName: !ImportValue '${self:custom.sstApp}-TableName'
     stripeSecretKey: ${env:STRIPE_SECRET_KEY}
 
   iamRoleStatements:
@@ -34,7 +41,8 @@ provider:
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
         - dynamodb:DescribeTable
-      Resource: "arn:aws:dynamodb:us-east-2:987241353497:table/notes"
+      Resource:
+        - !ImportValue '${self:custom.sstApp}-TableArn'
 
 functions:
   # hello:
@@ -93,4 +101,7 @@ functions:
           authorizer: aws_iam
 
 resources:
+  # API Gateway Errors
   - ${file(resources/api-gateway-errors.yml)}
+  # Cognito Identity Pool Policy
+  - ${file(resources/cognito-policy.yml)}

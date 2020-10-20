@@ -32,3 +32,231 @@ npx aws-api-gateway-cli-test --username="emaildesuso@example.com" --password="Pa
 
 aws cognito-idp sign-up --region "us-east-2" --client-id "1rki6ke5q6i2a0bgm7q7rcp5tb" --username "emaildesuso@example.com" --password "Passw0rd!"
 aws cognito-idp admin-confirm-sign-up --region "us-east-2" --user-pool-id "us-east-2_N3AckynRu" --username "emaildesuso@example.com"
+
+
+Serverless: Running "serverless" installed locally (in service node_modules)
+Serverless: DOTENV: Loading environment variables from .env:
+Serverless:      - tableName
+Serverless:      - STRIPE_SECRET_KEY
+Serverless: Using configuration:
+{
+  "packager": "npm",
+  "packagerOptions": {},
+  "webpackConfig": "node_modules\\serverless-bundle/src/webpack.config.js",
+  "includeModules": {
+    "forceExclude": [
+      "aws-sdk"
+    ],
+    "forceInclude": null,
+    "packagePath": "package.json"
+  },
+  "keepOutputDirectory": false
+}
+Serverless: Removing C:\Users\suso\Desktop\notes-api\serverless-stack-api\services\notes\.webpack
+Serverless: Using multi-compile (individual packaging)
+Serverless: Bundling with Webpack...
+Warning: React version not specified in eslint-plugin-react settings. See https://github.com/yannickcr/eslint-plugin-react#configuration .
+(node:10908) [ESLINT_LEGACY_ECMAFEATURES] DeprecationWarning: The 'ecmaFeatures' config file property is deprecated, and has no effect. (found in "..\..\..\..\..\.eslintrc")
+(node:10908) [ESLINT_LEGACY_ECMAFEATURES] DeprecationWarning: The 'ecmaFeatures' config file property is deprecated, and has no effect. (found in "defaults\configurations\eslint")
+(node:10908) [ESLINT_LEGACY_ECMAFEATURES] DeprecationWarning: The 'ecmaFeatures' config file property is deprecated, and has no effect. (found in "defaults\rules\eslint\es6\eslint")
+Serverless: Fetch dependency graph from C:\Users\suso\Desktop\notes-api\serverless-stack-api\services\notes\package.json
+Serverless: No external modules needed
+Serverless: Zip function: C:\Users\suso\Desktop\notes-api\serverless-stack-api\services\notes\.webpack\create [43 ms]
+Serverless: Zip function: C:\Users\suso\Desktop\notes-api\serverless-stack-api\services\notes\.webpack\get [12 ms]
+Serverless: Zip function: C:\Users\suso\Desktop\notes-api\serverless-stack-api\services\notes\.webpack\list [14 ms]
+Serverless: Zip function: C:\Users\suso\Desktop\notes-api\serverless-stack-api\services\notes\.webpack\update [12 ms]
+Serverless: Zip function: C:\Users\suso\Desktop\notes-api\serverless-stack-api\services\notes\.webpack\delete [13 ms]
+Serverless: Zip function: C:\Users\suso\Desktop\notes-api\serverless-stack-api\services\notes\.webpack\billing [18 ms]
+Serverless: Packaging service...
+Serverless: Remove C:\Users\suso\Desktop\notes-api\serverless-stack-api\services\notes\.webpack
+Serverless: Creating Stack...
+Serverless: Checking Stack create progress...
+CloudFormation - CREATE_IN_PROGRESS - AWS::CloudFormation::Stack - emaildesuso-notes-api-dev
+CloudFormation - CREATE_IN_PROGRESS - AWS::S3::Bucket - ServerlessDeploymentBucket
+CloudFormation - CREATE_IN_PROGRESS - AWS::S3::Bucket - ServerlessDeploymentBucket
+CloudFormation - CREATE_COMPLETE - AWS::S3::Bucket - ServerlessDeploymentBucket
+CloudFormation - CREATE_IN_PROGRESS - AWS::S3::BucketPolicy - ServerlessDeploymentBucketPolicy
+CloudFormation - CREATE_IN_PROGRESS - AWS::S3::BucketPolicy - ServerlessDeploymentBucketPolicy
+CloudFormation - CREATE_COMPLETE - AWS::S3::BucketPolicy - ServerlessDeploymentBucketPolicy
+CloudFormation - CREATE_COMPLETE - AWS::CloudFormation::Stack - emaildesuso-notes-api-dev
+Serverless: Stack create finished...
+Serverless: Uploading CloudFormation file to S3...
+Serverless: Uploading artifacts...
+Serverless: Uploading service create.zip file to S3 (79.21 KB)...
+Serverless: Uploading service get.zip file to S3 (75.27 KB)...
+Serverless: Uploading service list.zip file to S3 (75.3 KB)...
+Serverless: Uploading service billing.zip file to S3 (146.71 KB)...
+Serverless: Uploading service delete.zip file to S3 (75.13 KB)...
+Serverless: Uploading service update.zip file to S3 (75.8 KB)...
+Serverless: Validating template...
+Serverless: Updating Stack...
+Serverless: Checking Stack update progress...
+CloudFormation - UPDATE_IN_PROGRESS - AWS::CloudFormation::Stack - emaildesuso-notes-api-dev
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - GetLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - UpdateLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::IAM::Role - IamRoleLambdaExecution
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::RestApi - ApiGatewayRestApi
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - DeleteLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - BillingLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - ListLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - CreateLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::RestApi - ApiGatewayRestApi
+CloudFormation - CREATE_IN_PROGRESS - AWS::IAM::Role - IamRoleLambdaExecution
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::RestApi - ApiGatewayRestApi
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - UpdateLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - GetLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - DeleteLogGroup
+CloudFormation - CREATE_COMPLETE - AWS::Logs::LogGroup - UpdateLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - BillingLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - CreateLogGroup
+CloudFormation - CREATE_COMPLETE - AWS::Logs::LogGroup - GetLogGroup
+CloudFormation - CREATE_COMPLETE - AWS::Logs::LogGroup - DeleteLogGroup
+CloudFormation - CREATE_COMPLETE - AWS::Logs::LogGroup - BillingLogGroup
+CloudFormation - CREATE_COMPLETE - AWS::Logs::LogGroup - CreateLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::GatewayResponse - GatewayResponseDefault4XX
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Resource - ApiGatewayResourceBilling
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Resource - ApiGatewayResourceNotes
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::GatewayResponse - GatewayResponseDefault5XX
+CloudFormation - CREATE_IN_PROGRESS - AWS::IAM::Policy - CognitoAuthorizedApiPolicy
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Resource - ApiGatewayResourceBilling
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - ListLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Resource - ApiGatewayResourceNotes
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::GatewayResponse - GatewayResponseDefault5XX
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Resource - ApiGatewayResourceNotes
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Resource - ApiGatewayResourceBilling
+CloudFormation - CREATE_COMPLETE - AWS::Logs::LogGroup - ListLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::GatewayResponse - GatewayResponseDefault4XX
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::GatewayResponse - GatewayResponseDefault5XX
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::GatewayResponse - GatewayResponseDefault4XX
+CloudFormation - CREATE_IN_PROGRESS - AWS::IAM::Policy - CognitoAuthorizedApiPolicy
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodBillingOptions
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesOptions
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Resource - ApiGatewayResourceNotesIdVar
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodBillingOptions
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesOptions
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Resource - ApiGatewayResourceNotesIdVar
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Resource - ApiGatewayResourceNotesIdVar
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Method - ApiGatewayMethodBillingOptions
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Method - ApiGatewayMethodNotesOptions
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarOptions
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarOptions
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarOptions
+CloudFormation - CREATE_COMPLETE - AWS::IAM::Role - IamRoleLambdaExecution
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - UpdateLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - BillingLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - ListLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - CreateLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - DeleteLambdaFunction
+CloudFormation - CREATE_COMPLETE - AWS::IAM::Policy - CognitoAuthorizedApiPolicy
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - UpdateLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - CreateLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - BillingLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - GetLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - ListLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - DeleteLambdaFunction
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Function - UpdateLambdaFunction
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Function - BillingLambdaFunction
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Function - CreateLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Function - GetLambdaFunction
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Function - ListLambdaFunction
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Function - DeleteLambdaFunction
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Function - GetLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - UpdateLambdaPermissionApiGateway
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - UpdateLambdaVersioneSTQmDketTZQzlmyedMvPLa8byMglke69BlSlwMcI
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarPut
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesPost
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - BillingLambdaPermissionApiGateway
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - CreateLambdaPermissionApiGateway
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - UpdateLambdaPermissionApiGateway
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - BillingLambdaVersions9TXkZWHynEoMkxW2Tm2BcYQefu27iWXz2UzjRJs28
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - BillingLambdaPermissionApiGateway
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodBillingPost
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - CreateLambdaVersionUR1cULdiRwv8omHUr4Q98K89CaIPnMKS0tC9ZpK2kM
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesPost
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesGet
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - UpdateLambdaVersioneSTQmDketTZQzlmyedMvPLa8byMglke69BlSlwMcI
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarPut
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - CreateLambdaPermissionApiGateway
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodBillingPost
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - DeleteLambdaPermissionApiGateway
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarDelete
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - ListLambdaVersionqGU32xKXwKiAsYArv1n8d03KjB73FZSARVrA4W3jOsc
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesGet
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - ListLambdaPermissionApiGateway
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - DeleteLambdaVersion2ISfj6NfH9kPZHiPzlqeeqKGVU4n4zT06xT2I0MojsA
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarGet
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - BillingLambdaVersions9TXkZWHynEoMkxW2Tm2BcYQefu27iWXz2UzjRJs28
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Version - UpdateLambdaVersioneSTQmDketTZQzlmyedMvPLa8byMglke69BlSlwMcI
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - CreateLambdaVersionUR1cULdiRwv8omHUr4Q98K89CaIPnMKS0tC9ZpK2kM
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - DeleteLambdaPermissionApiGateway
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Method - ApiGatewayMethodNotesPost
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarDelete
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - ListLambdaPermissionApiGateway
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarGet
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Version - BillingLambdaVersions9TXkZWHynEoMkxW2Tm2BcYQefu27iWXz2UzjRJs28
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Method - ApiGatewayMethodBillingPost
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarPut
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - GetLambdaPermissionApiGateway
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Version - CreateLambdaVersionUR1cULdiRwv8omHUr4Q98K89CaIPnMKS0tC9ZpK2kM
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - ListLambdaVersionqGU32xKXwKiAsYArv1n8d03KjB73FZSARVrA4W3jOsc
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Method - ApiGatewayMethodNotesGet
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Permission - GetLambdaPermissionApiGateway
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - GetLambdaVersionpgQ5IAdNOexYZwsH8DVfWhPVjIAy0D3txRzrYynYw
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - DeleteLambdaVersion2ISfj6NfH9kPZHiPzlqeeqKGVU4n4zT06xT2I0MojsA
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarGet
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Version - ListLambdaVersionqGU32xKXwKiAsYArv1n8d03KjB73FZSARVrA4W3jOsc
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Method - ApiGatewayMethodNotesIdVarDelete
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Version - DeleteLambdaVersion2ISfj6NfH9kPZHiPzlqeeqKGVU4n4zT06xT2I0MojsA
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - GetLambdaVersionpgQ5IAdNOexYZwsH8DVfWhPVjIAy0D3txRzrYynYw
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Version - GetLambdaVersionpgQ5IAdNOexYZwsH8DVfWhPVjIAy0D3txRzrYynYw
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Deployment - ApiGatewayDeployment1603214491008
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Deployment - ApiGatewayDeployment1603214491008
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Deployment - ApiGatewayDeployment1603214491008
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Permission - UpdateLambdaPermissionApiGateway
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Permission - BillingLambdaPermissionApiGateway
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Permission - CreateLambdaPermissionApiGateway
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Permission - ListLambdaPermissionApiGateway
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Permission - DeleteLambdaPermissionApiGateway
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Permission - GetLambdaPermissionApiGateway
+CloudFormation - UPDATE_COMPLETE_CLEANUP_IN_PROGRESS - AWS::CloudFormation::Stack - emaildesuso-notes-api-dev
+CloudFormation - UPDATE_COMPLETE - AWS::CloudFormation::Stack - emaildesuso-notes-api-dev
+Serverless: Stack update finished...
+Service Information
+service: emaildesuso-notes-api
+stage: dev
+region: us-east-1
+stack: emaildesuso-notes-api-dev
+resources: 44
+api keys:
+  None
+endpoints:
+  POST - https://4za90mtisf.execute-api.us-east-1.amazonaws.com/dev/notes
+  GET - https://4za90mtisf.execute-api.us-east-1.amazonaws.com/dev/notes/{id}
+  GET - https://4za90mtisf.execute-api.us-east-1.amazonaws.com/dev/notes
+  PUT - https://4za90mtisf.execute-api.us-east-1.amazonaws.com/dev/notes/{id}
+  DELETE - https://4za90mtisf.execute-api.us-east-1.amazonaws.com/dev/notes/{id}
+  POST - https://4za90mtisf.execute-api.us-east-1.amazonaws.com/dev/billing
+functions:
+  create: emaildesuso-notes-api-dev-create
+  get: emaildesuso-notes-api-dev-get
+  list: emaildesuso-notes-api-dev-list
+  update: emaildesuso-notes-api-dev-update
+  delete: emaildesuso-notes-api-dev-delete
+  billing: emaildesuso-notes-api-dev-billing
+layers:
+  None
+
+Stack Outputs
+DeleteLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:987241353497:function:emaildesuso-notes-api-dev-delete:1
+CreateLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:987241353497:function:emaildesuso-notes-api-dev-create:1
+GetLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:987241353497:function:emaildesuso-notes-api-dev-get:1
+UpdateLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:987241353497:function:emaildesuso-notes-api-dev-update:1
+BillingLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:987241353497:function:emaildesuso-notes-api-dev-billing:1
+ListLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:987241353497:function:emaildesuso-notes-api-dev-list:1
+ServiceEndpoint: https://4za90mtisf.execute-api.us-east-1.amazonaws.com/dev
+ServerlessDeploymentBucketName: emaildesuso-notes-api-de-serverlessdeploymentbuck-sralhp239drg
+
+
+********************************************************************************************************************************************
+Serverless: Announcing an enhanced experience for Serverless Full-Stack Applications: https://github.com/serverless-components/fullstack-app
+********************************************************************************************************************************************

@@ -1,0 +1,27 @@
+Stack dev-notes-infra-dynamodb
+  Status: no changes
+  Outputs:
+    TableName: dev-notes-infra-dynamodb-TableCD117FA1-ZR82ZQFKY0HF
+    TableArn: arn:aws:dynamodb:us-east-1:987241353497:table/dev-notes-infra-dynamodb-TableCD117FA1-ZR82ZQFKY0HF
+  Exports:
+    dev-notes-infra-TableName: dev-notes-infra-dynamodb-TableCD117FA1-ZR82ZQFKY0HF
+    dev-notes-infra-TableArn: arn:aws:dynamodb:us-east-1:987241353497:table/dev-notes-infra-dynamodb-TableCD117FA1-ZR82ZQFKY0HF
+
+Stack dev-notes-infra-s3
+  Status: no changes
+  Outputs:
+    AttachmentsBucketName: dev-notes-infra-s3-uploads4f6eb0fd-12ycdmfl4e3we
+    ExportsOutputFnGetAttUploads4F6EB0FDArn5513CBEA: arn:aws:s3:::dev-notes-infra-s3-uploads4f6eb0fd-12ycdmfl4e3we
+  Exports:
+    dev-notes-infra-s3:ExportsOutputFnGetAttUploads4F6EB0FDArn5513CBEA: arn:aws:s3:::dev-notes-infra-s3-uploads4f6eb0fd-12ycdmfl4e3we
+
+Stack dev-notes-infra-cognito
+  Status: no changes
+  Outputs:
+    AuthenticatedRoleName: dev-notes-infra-cognito-CognitoAuthRoleCognitoDefa-1000AEZ1W5QON
+    UserPoolClientId: 6m55iktc07sqjj592f9j9s5t57
+    UserPoolId: us-east-1_k7Yscf3WQ
+    IdentityPoolId: us-east-1:7befeaad-c104-4229-9628-a1d439f4d978
+  Exports:
+    dev-notes-infra-CognitoAuthRole: dev-notes-infra-cognito-CognitoAuthRoleCognitoDefa-1000AEZ1W5QON
+
